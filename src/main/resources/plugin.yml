@@ -1,0 +1,3 @@
+main: ${pom.groupId}.CometPlugin
+name: ${pom.artifactId}
+version: ${pom.version}

@@ -1,0 +1,55 @@
+command:
+  executor: "&cThis command is only executable by players."
+  no_permission: "&cNo permission."
+  player_offline: "&cThis player is offline."
+  rank:
+    usage:
+      - "&7&m---------------------------------------"
+      - "&b&lRank Commands"
+      - ""
+      - "&b/rank create <rank> &7- &fCreate a rank"
+      - "&b/rank delete <rank> &7- &fDelete a rank"
+      - "&b/rank setdisplayname <rank> <displayName> &7- &fSet a rank display name"
+      - "&b/rank setcolor <rank> <color> &7- &fSet a rank color"
+      - "&b/rank setprefix <rank> <prefix> &7- &fSet a rank prefix"
+      - "&b/rank setweight <rank> <weight> &7- &fSet a rank weight"
+      - "&b/rank info <rank> &7- &fGet the info of a rank"
+      - "&7&m---------------------------------------"
+    create:
+      usage: "&cUsage: /rank create <name>"
+      message: "&eYou have &acreated &erank &f%rank%&e."
+    delete:
+      usage: "&cUsage: /rank delete <name>"
+      message: "&eYou have &cdeleted &erank &f%displayName%&e."
+    setdisplayname:
+      usage: "&cUsage: /rank setdisplayname <rank> <displayName>"
+      message: "&eYou have &aset &ethe display name of rank &f%rank% &eto %displayName%&e."
+    setcolor:
+      usage: "&cUsage: /rank setcolor <rank> <color>"
+      message: "&eYou have &aset &ethe color of rank &f%displayName% &eto %player%&e."
+    setprefix:
+      usage: "&cUsage: /rank setprefix <rank> <prefix>"
+      message: "&eYou have &aset &ethe prefix of rank &f%displayName% &eto %prefix%&e."
+    setweight:
+      usage: "&cUsage: /rank setweight <rank> <weight>"
+      message: "&eYou have &aset &ethe weight of rank &f%displayName% &eto &f%weight%&e."
+    info:
+      usage: "&cUsage: /rank info <rank>"
+      message:
+        - "&7&m----------------------------------"
+        - "%displayName% &eRank Information"
+        - ""
+        - "&eColor: &f%color%"
+        - "&ePrefix: &f%prefix%"
+        - "&eWeight: &f%weight%"
+        - "&7&m----------------------------------"
+    already_exists: "&cThat rank already exists."
+    doesnt_exist: "&cThat rank doesn't exist."
+  grant:
+    usage: "&cUsage: /grant <player> <rank>"
+    message: "&eYou have &agranted &f%target% &ethe &f%displayName% &erank."
+    target: "&eSomeone has &agranted &eyou the &f%displayName% &erank."
+  gamemode:
+    usage: "&cUsage: /gamemode <gamemode>"
+    message: "&fSet gamemode of &f%player% &fto &6%gamemode%&f."
+    already_in_gamemode: "&cYou are already in this specified gamemode."
