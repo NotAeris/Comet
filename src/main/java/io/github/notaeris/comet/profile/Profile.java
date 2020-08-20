@@ -1,6 +1,7 @@
 package io.github.notaeris.comet.profile;
 
 import io.github.notaeris.comet.grant.Grant;
+import io.github.notaeris.comet.rank.Rank;
 import lombok.Getter;
 
 import java.util.*;
@@ -9,6 +10,7 @@ import java.util.*;
 public class Profile {
 
     private final UUID uuid;
+    private Rank rank;
 
     private static final List<Profile> profiles = new ArrayList<>();
     private final List<Grant> grants = new ArrayList<>();

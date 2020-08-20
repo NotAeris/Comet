@@ -33,7 +33,7 @@ public class RankCommands {
                 player.sendMessage(CC.translate(CometPlugin.get().getConfig().getString("command.rank.delete.usage")));
                 return;
             }
-            this.delete(args.getArgs(1), player);
+            this.delete(Rank.findRank(args.getArgs(1)), player);
             return;
         }
 
@@ -42,7 +42,7 @@ public class RankCommands {
                 player.sendMessage(CC.translate(CometPlugin.get().getConfig().getString("command.rank.setdisplayname.usage")));
                 return;
             }
-            this.setDisplayName(args.getArgs(1), args.getArgs(2), player);
+            this.setDisplayName(Rank.findRank(args.getArgs(1)), args.getArgs(2), player);
             return;
         }
 
@@ -51,7 +51,7 @@ public class RankCommands {
                 player.sendMessage(CC.translate(CometPlugin.get().getConfig().getString("command.rank.setcolor.usage")));
                 return;
             }
-            this.setColor(args.getArgs(1), args.getArgs(2), player);
+            this.setColor(Rank.findRank(args.getArgs(1)), args.getArgs(2), player);
             return;
         }
 
@@ -60,7 +60,7 @@ public class RankCommands {
                 player.sendMessage(CC.translate(CometPlugin.get().getConfig().getString("command.rank.setprefix.usage")));
                 return;
             }
-            this.setPrefix(args.getArgs(1), args.getArgs(2), player);
+            this.setPrefix(Rank.findRank(args.getArgs(1)), args.getArgs(2), player);
             return;
         }
 
@@ -69,7 +69,7 @@ public class RankCommands {
                 player.sendMessage(CC.translate(CometPlugin.get().getConfig().getString("command.rank.setweight.usage")));
                 return;
             }
-            this.setWeight(args.getArgs(1), Integer.parseInt(args.getArgs(2)), player);
+            this.setWeight(Rank.findRank(args.getArgs(1)), Integer.parseInt(args.getArgs(2)), player);
             return;
         }
 
@@ -78,7 +78,7 @@ public class RankCommands {
                 player.sendMessage(CC.translate(CometPlugin.get().getConfig().getString("command.rank.info.usage")));
                 return;
             }
-            this.info(args.getArgs(1), player);
+            this.info(Rank.findRank(args.getArgs(1)), player);
         }
     }
 
@@ -89,9 +89,7 @@ public class RankCommands {
      * @param player the player
      */
     private void create(String name, Player player) {
-        Rank rank = Rank.findRank(name);
-
-        if(rank != null) {
+        if(Rank.findRank(name) != null) {
             player.sendMessage(CC.translate(CometPlugin.get().getConfig().getString("command.rank.already_exists")));
             return;
         }
@@ -102,12 +100,10 @@ public class RankCommands {
     /**
      * Delete a rank
      *
-     * @param name the name
+     * @param rank the rank
      * @param player the player
      */
-    private void delete(String name, Player player) {
-        Rank rank = Rank.findRank(name);
-
+    private void delete(Rank rank, Player player) {
         if(rank == null) {
             player.sendMessage(CC.translate(CometPlugin.get().getConfig().getString("command.rank.doesnt_exist")));
             return;
@@ -120,13 +116,11 @@ public class RankCommands {
     /**
      * Set a rank display name
      *
-     * @param name the name
+     * @param rank the rank
      * @param displayName the displayName
      * @param player the player
      */
-    private void setDisplayName(String name, String displayName, Player player) {
-        Rank rank = Rank.findRank(name);
-
+    private void setDisplayName(Rank rank, String displayName, Player player) {
         if(rank == null) {
             player.sendMessage(CC.translate(CometPlugin.get().getConfig().getString("command.rank.doesnt_exist")));
             return;
@@ -140,13 +134,11 @@ public class RankCommands {
     /**
      * Set a rank color
      *
-     * @param name the name
+     * @param rank the rank
      * @param color the color
      * @param player the player
      */
-    private void setColor(String name, String color, Player player) {
-        Rank rank = Rank.findRank(name);
-
+    private void setColor(Rank rank, String color, Player player) {
         if(rank == null) {
             player.sendMessage(CC.translate(CometPlugin.get().getConfig().getString("command.rank.doesnt_exist")));
             return;
@@ -160,13 +152,11 @@ public class RankCommands {
     /**
      * Set a rank prefix
      *
-     * @param name the name
+     * @param rank the rank
      * @param prefix the prefix
      * @param player the player
      */
-    private void setPrefix(String name, String prefix, Player player) {
-        Rank rank = Rank.findRank(name);
-
+    private void setPrefix(Rank rank, String prefix, Player player) {
         if(rank == null) {
             player.sendMessage(CC.translate(CometPlugin.get().getConfig().getString("command.rank.doesnt_exist")));
             return;
@@ -180,13 +170,11 @@ public class RankCommands {
     /**
      * Set a rank weight
      *
-     * @param name the name
+     * @param rank the rank
      * @param weight the weight
      * @param player the player
      */
-    private void setWeight(String name, int weight, Player player) {
-        Rank rank = Rank.findRank(name);
-
+    private void setWeight(Rank rank, int weight, Player player) {
         if(rank == null) {
             player.sendMessage(CC.translate(CometPlugin.get().getConfig().getString("command.rank.doesnt_exist")));
             return;
@@ -200,12 +188,10 @@ public class RankCommands {
     /**
      * Get Info on a rank
      *
-     * @param name the name
+     * @param rank the rank
      * @param player the player
      */
-    private void info(String name, Player player) {
-        Rank rank = Rank.findRank(name);
-
+    private void info(Rank rank, Player player) {
         if(rank == null) {
             player.sendMessage(CC.translate(CometPlugin.get().getConfig().getString("command.rank.doesnt_exist")));
             return;

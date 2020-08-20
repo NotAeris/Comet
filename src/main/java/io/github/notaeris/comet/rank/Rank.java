@@ -14,7 +14,7 @@ public class Rank {
     private String name, displayName, color, prefix;
     private int weight;
 
-    private static final List<Rank> ranks = new ArrayList<>();
+    @Getter private static final List<Rank> ranks = new ArrayList<>();
 
     /**
      * Main constructor
@@ -37,6 +37,16 @@ public class Rank {
      */
     public void deleteRank() {
         ranks.remove(this);
+    }
+
+    public static Rank getDefaultRank() {
+        if(findRank("Default") == null) {
+            Rank rank = new Rank("Default");
+
+            rank.setDisplayName("&fDefault");
+            return rank;
+        }
+        return findRank("Default");
     }
 
     /**

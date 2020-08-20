@@ -53,3 +53,4 @@ command:
     usage: "&cUsage: /gamemode <gamemode>"
     message: "&fSet gamemode of &f%player% &fto &6%gamemode%&f."
     already_in_gamemode: "&cYou are already in this specified gamemode."
+    doesnt_exist: "&cThat gamemode doesnt exist."

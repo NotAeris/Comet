@@ -1,6 +1,8 @@
 package io.github.notaeris.comet.listeners;
 
+import io.github.notaeris.comet.grant.Grant;
 import io.github.notaeris.comet.profile.Profile;
+import io.github.notaeris.comet.rank.Rank;
 import io.github.notaeris.comet.util.CC;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -16,7 +18,7 @@ public class PlayerListener implements Listener {
 
         if(Profile.findProfile(event.getPlayer().getUniqueId()) == null) {
             new Profile(event.getPlayer().getUniqueId());
-            Profile.findProfile(event.getPlayer().getUniqueId());
+            Profile.findProfile(event.getPlayer().getUniqueId()).addGrant(new Grant(Rank.getDefaultRank(), Profile.findProfile(event.getPlayer().getUniqueId())));
         }
     }
 
