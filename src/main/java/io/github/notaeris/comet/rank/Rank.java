@@ -17,7 +17,7 @@ public class Rank {
     @Getter private static final List<Rank> ranks = new ArrayList<>();
 
     /**
-     * Main constructor
+     * Constructor for Rank
      *
      * @param name the name
      */
@@ -39,6 +39,11 @@ public class Rank {
         ranks.remove(this);
     }
 
+    /**
+     * Get default rank
+     *
+     * @return the rank
+     */
     public static Rank getDefaultRank() {
         if(findRank("Default") == null) {
             Rank rank = new Rank("Default");

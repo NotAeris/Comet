@@ -16,7 +16,7 @@ public class Profile {
     private final List<Grant> grants = new ArrayList<>();
 
     /**
-     * Main constructor
+     * Constructor for Profile
      *
      * @param uuid the uuid
      */
