@@ -54,3 +54,15 @@ command:
     message: "&fSet gamemode of &f%player% &fto &6%gamemode%&f."
     already_in_gamemode: "&cYou are already in this specified gamemode."
     doesnt_exist: "&cThat gamemode doesnt exist."
+  teleport:
+    usage: "&cUsage: /%command% <player>"
+    message: "&eTeleporting to &f%target%&f."
+    here:
+      target: "&eTeleporting you to &f%player%&f."
+      message: "&eTeleporting &f%target% &eto &f%player%&f."
+  staffchat:
+    usage: "&cUsage: /%command% <message...>"
+    format:
+      - "&b[S] &7[%server%] &f%player%&7: &f%message%"
+
+server_name: "Dev"
