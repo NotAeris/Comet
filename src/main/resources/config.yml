@@ -64,5 +64,15 @@ command:
     usage: "&cUsage: /%command% <message...>"
     format:
       - "&b[S] &7[%server%] &f%player%&7: &f%message%"
+  request:
+    usage: "&cUsage: /%command% <message...>"
+    sent: "&aWe have received your request."
+    format:
+      - "&9[Request] &b[%server%] &f%player% &7has requested assistance: &f%message%"
+  report:
+    usage: "&cUsage: /report <player> <message...>"
+    sent: "&aWe have received your report."
+    format:
+      - "&9[Report] &b[%server%] &f%player% &7has reported &f%target% &7for: &f%message%"
 
 server_name: "Dev"
