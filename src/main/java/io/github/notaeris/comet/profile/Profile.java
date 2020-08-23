@@ -3,14 +3,16 @@ package io.github.notaeris.comet.profile;
 import io.github.notaeris.comet.grant.Grant;
 import io.github.notaeris.comet.rank.Rank;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.*;
 
-@Getter
+@Getter @Setter
 public class Profile {
 
     private final UUID uuid;
     private Rank rank;
+    private boolean chatToggled;
 
     private static final List<Profile> profiles = new ArrayList<>();
     private final List<Grant> grants = new ArrayList<>();

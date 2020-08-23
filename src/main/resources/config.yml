@@ -74,5 +74,20 @@ command:
     sent: "&aWe have received your report."
     format:
       - "&9[Report] &b[%server%] &f%player% &7has reported &f%target% &7for: &f%message%"
+  chat:
+    usage:
+      - "&7&m---------------------------------------"
+      - "&e&lChat Commands"
+      - ""
+      - "&e/chat clear &f- &7Clear the chat."
+      - "&e/chat mute &f- &7Mute the chat."
+      - "&7&m---------------------------------------"
+    clear:
+      lines: 200
+      message: "&ePublic chat has been cleared."
+    mute:
+      enabled: "&ePublic chat has been &aenabled&e."
+      disabled: "&ePublic chat has been &cdisabled&e."
+      currently_enabled: "&cPublic chat is currently muted."
 
 server_name: "Dev"

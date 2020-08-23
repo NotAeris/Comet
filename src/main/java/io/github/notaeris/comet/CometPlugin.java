@@ -22,7 +22,8 @@ public class CometPlugin extends JavaPlugin {
                 new TeleportCommand(),
                 new StaffChatCommand(),
                 new RequestCommand(),
-                new ReportCommand()
+                new ReportCommand(),
+                new ChatCommands()
         ).forEach(new CommandFramework(this)::registerCommands);
 
         Bukkit.getPluginManager().registerEvents(new PlayerListener(), this);
